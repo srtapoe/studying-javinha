@@ -1,12 +1,12 @@
 ## Tópicos a serem estudados/revisados 
 
- - [ ] Arrays
- - [ ] Foreach
- - [ ] POO Coesão
- - [ ] POO Referência de ojetos
- - [ ] POO Métodos
- - [ ] POO Parâmetros
- - [ ] POO Modificadores de acesso
+ - [x] Arrays
+ - [x] Foreach
+ - [x] POO Coesão
+ - [x] POO Referência de ojetos
+ - [x] POO Métodos
+ - [x] POO Parâmetros
+ - [x] POO Modificadores de acesso
  - [ ] Sobrecarga de método
  - [ ] Métodos estáticos
  - [ ] Associação
