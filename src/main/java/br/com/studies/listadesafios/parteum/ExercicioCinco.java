@@ -1,4 +1,4 @@
-package br.com.studies.listadesafios;
+package br.com.studies.listadesafios.parteum;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
