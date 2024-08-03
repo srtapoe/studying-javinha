@@ -53,7 +53,7 @@ caso contrário devera multiplicar A por B. Ao final de qualquer um dos cálculo
 | Maior ou igual a 40      | Obesidade grau III (mórbida)       |
 
  - [x]  Faça um algoritmo que leia três notas obtidas por um aluno, e imprima na tela a média das notas.
- - [ ] Faça um algoritmo que leia quatro notas obtidas por um aluno, calcule a média das nota obtidas, imprima na tela o nome do aluno e se o aluno foi aprovado ou reprovado. Para o aluno ser considerado aprovado sua média final deve ser maior ou igual a 7.
+ - [x] Faça um algoritmo que leia quatro notas obtidas por um aluno, calcule a média das nota obtidas, imprima na tela o nome do aluno e se o aluno foi aprovado ou reprovado. Para o aluno ser considerado aprovado sua média final deve ser maior ou igual a 7.
  - [ ] Faça um algoritmo que leia o valor de um produto e determine o valor que deve ser pago, conforme a escolha da forma de pagamento pelo comprador e imprima na tela o valor final do produto a ser pago. Utilize os códigos da tabela de condições de pagamento para efetuar o cálculo adequado.
 
    | Código | Condição de Pagamento                                         |
