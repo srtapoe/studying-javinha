@@ -63,7 +63,7 @@ caso contrário devera multiplicar A por B. Ao final de qualquer um dos cálculo
    | 3      | Parcelado no cartão em duas vezes, preço normal do produto sem juros |
    | 4      | Parcelado no cartão em três vezes ou mais, preço normal do produto mais juros de 10% |
 
- - [ ] Faça algoritmo que leia o nome e a idade de uma peso e imprima na tela o nome da pessoa e se ela é maior ou menor de idade. 
+ - [x] Faça algoritmo que leia o nome e a idade de uma pessoa e imprima na tela o nome da pessoa e se ela é maior ou menor de idade. 
  - [ ] Faça um algoritmo que receba um valor A e B, e troque o valor de A por B e o valor de B por A e imprima na tela os valores.
  - [ ] Faça um algoritmo que leia o ano em que uma pessoa nasceu, imprima na tela quantos anos, meses e dias essa pessoa ja viveu. Leve em consideração o ano com 365 dias e o mês com 30 dias.
  (Ex: 5 anos, 2 meses e 15 dias de vida)
