@@ -7,16 +7,16 @@
  - [x] POO Métodos
  - [x] POO Parâmetros
  - [x] POO Modificadores de acesso
- - [ ] Sobrecarga de método
- - [ ] Métodos estáticos
+ - [x] Sobrecarga de método
+ - [x] Métodos estáticos
  - [ ] Associação
- - [ ] Herança
- - [ ] Sobrescrita de método
- - [ ] Enumeração
- - [ ] Classes Abstratas
- - [ ] Interfaces
- - [ ] Polimorfismo
- - [ ] Git
+ - [x] Herança
+ - [x] Sobrescrita de método
+ - [x] Enumeração
+ - [x] Classes Abstratas
+ - [x] Interfaces
+ - [x] Polimorfismo
+ - [x] Git
  - [ ] Streams
  - [ ] Coleções
  - [ ] Lambdas
