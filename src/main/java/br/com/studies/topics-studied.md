@@ -74,7 +74,7 @@ caso contrário devera multiplicar A por B. Ao final de qualquer um dos cálculo
 ``
  - [x] Francisco tem 1,50m e cresce 2 centímetros por ano, enquanto Sara tem 1,10m e cresce 3 centímetros por ano. Faça um algoritmo que calcule e imprima na tela em quantos anos serão necessários para que Francisco seja maior que Sara.
  - [x] Faça um algoritmo que imprima na tela a tabuada de 1 até 10.
- - [ ] Faça um algoritmo que receba um valor inteiro e imprima na tela a sua tabuada.
+ - [x] Faça um algoritmo que receba um valor inteiro e imprima na tela a sua tabuada.
  - [ ] Faça um algoritmo que mostre um valor aleatório entre 0 e 100.
  - [ ] Faça um algoritmo que leia dois valores inteiros A e B, imprima na tela o quociente e o resto da divisão inteira entre eles.
  - [ ] Faça um algoritmo que efetue o cálculo do salário líquido de um professor. As informações fornecidas serão: valor da hora aula, número de aulas lecionadas no mês e percentual de desconto do INSS. Imprima na tela o salário líquido final.
