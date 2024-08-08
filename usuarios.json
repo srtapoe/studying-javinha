@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "Ted Mosby",
+    "email": "mosbyted@gmail.com",
+    "idade": 29,
+    "altura": 190
+  },
+  {
+    "nome": "Lily Aldrin",
+    "email": "aldrinlily@gmail.com",
+    "idade": 29,
+    "altura": 156
+  },
+  {
+    "nome": "Marshall Ericksen",
+    "email": "ericksenmarshall@gmail.com",
+    "idade": 29,
+    "altura": 200
+  }
+]
