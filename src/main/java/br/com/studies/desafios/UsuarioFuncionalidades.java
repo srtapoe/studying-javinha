@@ -15,7 +15,7 @@ public class UsuarioFuncionalidades {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final String QUESTIONS_FILE = "formulario.json";
 
-    static void cadastrarUsuario(Scanner dadoEntrada) {
+    static void cadastrarUsuario() {
         Scanner dadosEntrada = new Scanner(System.in);
 
         try(FileReader formulario = new FileReader(QUESTIONS_FILE)) {
@@ -48,7 +48,7 @@ public class UsuarioFuncionalidades {
             String arquivoGerado = salvarRespostasJson(answers);
 
             System.out.println("Respostas salvas em " + arquivoGerado);
-            List<Usuario> usuarios = readUsuarios();
+            List<Usuario> usuarios = lerUsuarios();
             usuarios.add(usuario);
             salvarUsuario(usuarios);
             System.out.println("Usuário cadastrado com sucesso!");
@@ -79,7 +79,7 @@ public class UsuarioFuncionalidades {
     }
 
     static void listarUsuarios() throws IOException {
-        List<Usuario> usuarios = readUsuarios();
+        List<Usuario> usuarios = lerUsuarios();
         if (usuarios.isEmpty()) {
             System.out.println("Nenhum usuário cadastrado.");
         } else {
@@ -89,11 +89,23 @@ public class UsuarioFuncionalidades {
         }
     }
 
-    static void pesquisarUsuario(Scanner dadosEntrada){
-        System.out.println("Em breve!");
+    static void pesquisarUsuario(Scanner dadosEntrada) throws IOException {
+        System.out.println("Pesquisar por (nome/idade/email):");
+        String criterio = dadosEntrada.nextLine().toLowerCase();
+        System.out.println("Digite o valor a ser pesquisado:");
+        String valor = dadosEntrada.nextLine().toLowerCase();
+        List<Usuario> usuarios = lerUsuarios();
+        for (Usuario usuario : usuarios) {
+            if ((criterio.equals("nome") && usuario.nome().toLowerCase().contains(valor)) ||
+                    (criterio.equals("idade") && Integer.toString(usuario.idade()).contains(valor)) ||
+                    (criterio.equals("email") && usuario.email().toLowerCase().contains(valor))) {
+                System.out.println("Nome: " + usuario.nome() + ", Email: " + usuario.email() + ", Idade: " + usuario.idade() + ", Altura: "
+                        + usuario.altura());
+            }
+        }
     }
 
-    private static List<Usuario> readUsuarios() throws IOException {
+    private static List<Usuario> lerUsuarios() throws IOException {
         try (FileReader reader = new FileReader(USERS_FILE)) {
             JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
             List<Usuario> usuarios = new ArrayList<>();

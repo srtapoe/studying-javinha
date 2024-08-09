@@ -32,7 +32,7 @@ public class Pergunta {
 
             switch (choice) {
                 case 1:
-                    cadastrarUsuario(dadosEntrada);
+                    cadastrarUsuario();
                     break;
                 case 2:
                     listarUsuarios();

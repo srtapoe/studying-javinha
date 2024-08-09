@@ -22,5 +22,11 @@
     "email": "holmes@bbc.com",
     "idade": 31,
     "altura": 187
+  },
+  {
+    "nome": "Lilian Xavier",
+    "email": "xavierlilian@gmail.com",
+    "idade": 23,
+    "altura": 175
   }
 ]
