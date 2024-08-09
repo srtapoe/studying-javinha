@@ -15,7 +15,7 @@ public class UsuarioFuncionalidades {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final String QUESTIONS_FILE = "formulario.json";
 
-    static void cadastrarUsuario() {
+    static void cadastrarUsuario() throws RuntimeException, IOException {
         Scanner dadosEntrada = new Scanner(System.in);
 
         try(FileReader formulario = new FileReader(QUESTIONS_FILE)) {
@@ -53,8 +53,6 @@ public class UsuarioFuncionalidades {
             salvarUsuario(usuarios);
             System.out.println("Usuário cadastrado com sucesso!");
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
     }
