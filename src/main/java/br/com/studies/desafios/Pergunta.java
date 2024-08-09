@@ -55,14 +55,32 @@ public class Pergunta {
         }
     }
 
-    private static void deletarPergunta(Scanner dadosEntrada) {
-        System.out.println("Em breve!");
+    private static void deletarPergunta(Scanner dadosEntrada) throws IOException {
+        List<String> questions = lerQuestoes();
+        for (int i = 0; i < questions.size(); i++) {
+            System.out.println((i + 1) + " - " + questions.get(i));
+        }
+        System.out.println("Digite o número da pergunta a ser deletada:");
+        int index = dadosEntrada.nextInt();
+        dadosEntrada.nextLine();
+
+        if(index >= 1 && index <= 4) {
+            System.out.println("Você não pode deletar as 4 primeiras perguntas");
+        }
+
+        if (index >= 5 && index <= questions.size()) {
+            questions.remove(index - 1);
+            salvarQuestao(questions);
+            System.out.println("Pergunta n° " + index + " deletada com sucesso!");
+        } else if(index > questions.size()) {
+            System.out.println("Índice inválido!");
+        }
     }
 
     private static void cadastrarPergunta(Scanner dadosEntrada) throws IOException {
         System.out.println("Digite a nova pergunta:");
         String novaPergunta = dadosEntrada.nextLine();
-        List<String> questions = readQuestions();
+        List<String> questions = lerQuestoes();
         questions.add(novaPergunta);
         salvarQuestao(questions);
         System.out.println("Pergunta adicionada com sucesso!");
@@ -80,7 +98,7 @@ public class Pergunta {
         }
     }
 
-    private static List<String> readQuestions() throws IOException {
+    private static List<String> lerQuestoes() throws IOException {
         try (FileReader reader = new FileReader(QUESTIONS_FILE)) {
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
             JsonArray questionsArray = jsonObject.getAsJsonArray("perguntas");
