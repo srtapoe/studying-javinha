@@ -1,5 +1,6 @@
 package br.com.studies.desafios;
 
+import br.com.studies.desafios.dto.Usuario;
 import com.google.gson.*;
 
 import java.io.FileReader;
@@ -12,13 +13,12 @@ import java.util.Scanner;
 public class UsuarioFuncionalidades {
     private static final String USERS_FILE = "usuarios.json";
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final String QUESTIONS_FILE = "formulario.json";
 
     static void cadastrarUsuario(Scanner dadoEntrada) {
         Scanner dadosEntrada = new Scanner(System.in);
 
-        String perguntas = "formulario.json";
-
-        try(FileReader formulario = new FileReader(perguntas)) {
+        try(FileReader formulario = new FileReader(QUESTIONS_FILE)) {
 
             JsonObject json = JsonParser.parseReader(formulario).getAsJsonObject();
             JsonArray jsonArray = json.getAsJsonArray("perguntas");
@@ -78,7 +78,7 @@ public class UsuarioFuncionalidades {
         return outputFileName;
     }
 
-    static void listarUsuarios(){
+    static void listarUsuarios() throws IOException {
         List<Usuario> usuarios = readUsuarios();
         if (usuarios.isEmpty()) {
             System.out.println("Nenhum usuário cadastrado.");
@@ -93,7 +93,7 @@ public class UsuarioFuncionalidades {
         System.out.println("Em breve!");
     }
 
-    private static List<Usuario> readUsuarios() {
+    private static List<Usuario> readUsuarios() throws IOException {
         try (FileReader reader = new FileReader(USERS_FILE)) {
             JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
             List<Usuario> usuarios = new ArrayList<>();
@@ -103,13 +103,10 @@ public class UsuarioFuncionalidades {
                 usuarios.add(usuario);
             }
             return usuarios;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new ArrayList<>();
         }
     }
 
-    private static void salvarUsuario(List<Usuario> usuarios) {
+    private static void salvarUsuario(List<Usuario> usuarios) throws IOException {
         try (FileWriter file = new FileWriter(USERS_FILE)) {
             JsonArray jsonArray = new JsonArray();
             for (Usuario usuario : usuarios) {
@@ -117,8 +114,6 @@ public class UsuarioFuncionalidades {
                 jsonArray.add(jsonObject);
             }
             gson.toJson(jsonArray, file);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

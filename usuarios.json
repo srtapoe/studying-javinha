@@ -16,5 +16,11 @@
     "email": "ericksenmarshall@gmail.com",
     "idade": 29,
     "altura": 200
+  },
+  {
+    "nome": "Sherlock Holmes",
+    "email": "holmes@bbc.com",
+    "idade": 31,
+    "altura": 187
   }
 ]
