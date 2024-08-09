@@ -14,7 +14,7 @@ Descritos brevemente no arquivos de [Tópicos a serem estudados](https://github.
 
 ## 🪓Desafios
 
-- [Desafio 1](desafios/Desafio1.md): Descrição do primeiro desafio.
+- [Desafio 1](desafios/Desafio1.md): Cadastro via CLI.
 - [Desafio 2](desafios/Desafio2.md): Descrição do segundo desafio.
 - [Desafio 3](desafios/Desafio3.md): Descrição do terceiro desafio.
 
