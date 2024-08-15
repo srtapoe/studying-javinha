@@ -3,30 +3,60 @@
     "nome": "Ted Mosby",
     "email": "mosbyted@gmail.com",
     "idade": 29,
-    "altura": 190
+    "altura": "190"
   },
   {
     "nome": "Lily Aldrin",
     "email": "aldrinlily@gmail.com",
     "idade": 29,
-    "altura": 156
+    "altura": "156"
   },
   {
     "nome": "Marshall Ericksen",
     "email": "ericksenmarshall@gmail.com",
     "idade": 29,
-    "altura": 200
+    "altura": "200"
   },
   {
     "nome": "Sherlock Holmes",
     "email": "holmes@bbc.com",
     "idade": 31,
-    "altura": 187
+    "altura": "187"
   },
   {
     "nome": "Lilian Xavier",
     "email": "xavierlilian@gmail.com",
     "idade": 23,
-    "altura": 175
+    "altura": "175"
+  },
+  {
+    "nome": "Marshall Ericksen",
+    "email": "ericksenlittlebear@gmail.com",
+    "idade": 29,
+    "altura": "1,98"
+  },
+  {
+    "nome": "Lily Aldrin",
+    "email": "lily@gmail.com",
+    "idade": 29,
+    "altura": "1,59"
+  },
+  {
+    "nome": "Theodore Evely Mosby",
+    "email": "tedmosby@gmail.com",
+    "idade": 29,
+    "altura": "1,86"
+  },
+  {
+    "nome": "Sherlock Holmes",
+    "email": "sherlockholmes@gmail.com",
+    "idade": 31,
+    "altura": "1,90"
+  },
+  {
+    "nome": "Barney Stinson",
+    "email": "playbook@gmail.com",
+    "idade": 29,
+    "altura": "1,85"
   }
 ]
