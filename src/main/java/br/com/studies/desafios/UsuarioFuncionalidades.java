@@ -1,6 +1,8 @@
 package br.com.studies.desafios;
 
 import br.com.studies.desafios.dto.Usuario;
+import br.com.studies.desafios.exceptions.EmailDuplicadoException;
+import br.com.studies.desafios.validations.ValidadorUsuario;
 import com.google.gson.*;
 
 import java.io.FileReader;
@@ -18,7 +20,7 @@ public class UsuarioFuncionalidades {
     static void cadastrarUsuario() throws RuntimeException, IOException {
         Scanner dadosEntrada = new Scanner(System.in);
 
-        try(FileReader formulario = new FileReader(QUESTIONS_FILE)) {
+        try (FileReader formulario = new FileReader(QUESTIONS_FILE)) {
 
             JsonObject json = JsonParser.parseReader(formulario).getAsJsonObject();
             JsonArray jsonArray = json.getAsJsonArray("perguntas");
@@ -38,20 +40,39 @@ public class UsuarioFuncionalidades {
                 answers.add(resposta);
             }
 
-            Usuario usuario = new Usuario(answers.getFirst(), answers.get(1), Integer.parseInt(answers.get(2)), Integer.parseInt(answers.get(3)));
+            Usuario usuario =
+                    new Usuario(answers.getFirst(),
+                            answers.get(1),
+                            Integer.parseInt(answers.get(2)),
+                            answers.get(3));
 
 
-            for(String answer : answers) {
-                System.out.println(answer);
+            List<Usuario> usuariosEmails = lerUsuarios();
+            boolean emailJaCadastrado = usuariosEmails
+                    .stream()
+                    .anyMatch(u -> u.email().equalsIgnoreCase(usuario.email()));
+
+            if(emailJaCadastrado){
+               throw new EmailDuplicadoException(usuario.email());
             }
 
-            String arquivoGerado = salvarRespostasJson(answers);
+            try {
+                ValidadorUsuario.validarUsuario(usuario);
 
-            System.out.println("Respostas salvas em " + arquivoGerado);
-            List<Usuario> usuarios = lerUsuarios();
-            usuarios.add(usuario);
-            salvarUsuario(usuarios);
-            System.out.println("Usuário cadastrado com sucesso!");
+                for (String answer : answers) {
+                    System.out.println(answer);
+                }
+
+                String arquivoGerado = salvarRespostasJson(answers);
+
+                System.out.println("Respostas salvas em " + arquivoGerado);
+                List<Usuario> usuarios = lerUsuarios();
+                usuarios.add(usuario);
+                salvarUsuario(usuarios);
+                System.out.println("Usuario cadastrado com sucesso!");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro no cadastro do usuario: \n" + e.getMessage());
+            }
 
         }
 
@@ -61,7 +82,7 @@ public class UsuarioFuncionalidades {
         JsonObject respostaJson = new JsonObject();
         JsonArray respostaArray = new JsonArray();
 
-        for(String answer : answers) {
+        for (String answer : answers) {
             respostaArray.add(answer);
         }
         respostaJson.add("answers", respostaArray);
